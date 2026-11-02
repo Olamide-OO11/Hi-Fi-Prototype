@@ -1,4 +1,4 @@
 # Hi-Fi-Prototype
 HCI Project 
-High-fi protoype
+High-fi prototype
 First personal repository
