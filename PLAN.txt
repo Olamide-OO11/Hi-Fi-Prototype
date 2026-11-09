@@ -1,0 +1,11 @@
+Create navigation bar (Discover, Add Recipe, Recipe Book)
+
+Create column of Photos - Discover
+Create responsive widgets/columns - Add Recipes
+Create list of saved meals - Recipe Book
+
+Set up of and creation of timers within
+Notification when timer is complete
+How to implement sound qhen task complete
+
+Voice audio input - stretch goal?
