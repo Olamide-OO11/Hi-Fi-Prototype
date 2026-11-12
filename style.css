@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 50px;
@@ -15,4 +15,109 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f4f4f9;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0366d6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Main page content */
+
+.page-content {
+    padding: 20px;
+    padding-bottom: 100px;
+}
+
+
+/* Bottom Navigation Bar */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+
+/* Navigation links */
+
+.nav-item {
+    text-decoration: none;
+    color: #777;
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+}
+
+
+/* Selected navigation page */
+
+.nav-item.active {
+    color: #0366d6;
+    font-weight: bold;
+}
+
+
+/* Mobile screen adjustments */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .page-content {
+        padding: 15px;
+        padding-bottom: 100px;
+    }
+
+    .bottom-nav {
+        padding: 12px 0;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    }
+
+    .nav-item {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        width: auto;
+        max-width: 100%;
+    }
+
 }
