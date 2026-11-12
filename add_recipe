@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe - PrepMate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page-content">
+
+        <h1>Add Recipe</h1>
+
+        <p>This is where you will be able to add your own recipes.</p>
+
+        <button id="myBtn">Test Add Recipe</button>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+
+        <a href="index.html" class="nav-item">
+            <span>Discover</span>
+        </a>
+
+        <a href="add-recipe.html" class="nav-item active">
+            <span>Add Recipe</span>
+        </a>
+
+        <a href="recipe-book.html" class="nav-item">
+            <span>Recipe Book</span>
+        </a>
+
+    </nav>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
