@@ -1,3 +1,5 @@
+
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +19,11 @@
 
     </main>
 
+    -->
+
     <!-- Bottom Navigation -->
+
+    <!--
     <nav class="bottom-nav">
 
         <a href="index.html" class="nav-item active">
@@ -35,6 +41,62 @@
     </nav>
 
     <script src="script.js"></script>
+
+</body>
+</html>
+
+
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport-fit=cover lets the nav use the safe area on notched phones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Discover - PrepMate</title>
+    <!-- Font Awesome from a CDN: no account or kit needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page-content">
+
+        <h1>Discover</h1>
+
+        <!-- discover.js fills this list with recipe cards -->
+        <div class="page-body" id="discover-list"></div>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+
+        <a href="index.html" class="nav-item active" aria-current="page">
+            <i class="fa-regular fa-compass" aria-hidden="true"></i>
+            <span>Discover</span>
+        </a>
+
+        <a href="add-recipe.html" class="nav-item">
+            <i class="fa-regular fa-square-plus" aria-hidden="true"></i>
+            <span>Add Recipe</span>
+        </a>
+
+        <a href="recipe-book.html" class="nav-item">
+            <i class="fa-solid fa-book" aria-hidden="true"></i>
+            <span>Recipe Book</span>
+        </a>
+
+    </nav>
+
+    <!-- Order matters: shared code first, then this page's code -->
+    <script src="recipes.js"></script>
+    <script src="discover.js"></script>
 
 </body>
 </html>
