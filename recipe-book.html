@@ -1,4 +1,6 @@
 
+
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +22,11 @@
 
     </main>
 
+-->
+
     <!-- Bottom Navigation -->
+
+    <!--
     <nav class="bottom-nav">
 
         <a href="index.html" class="nav-item">
@@ -38,6 +44,63 @@
     </nav>
 
     <script src="script.js"></script>
+
+</body>
+</html>
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Recipe Book - PrepMate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page-content">
+
+        <h1>Recipe Book</h1>
+
+        <div class="tabs">
+            <button type="button" class="tab" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="tab" data-filter="recents" aria-pressed="false">Recents</button>
+            <button type="button" class="tab" data-filter="favourites" aria-pressed="false">Favourites</button>
+        </div>
+
+        <!-- recipe-book.js fills this list with recipe cards -->
+        <div class="page-body" id="book-list"></div>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+
+        <a href="index.html" class="nav-item">
+            <i class="fa-regular fa-compass" aria-hidden="true"></i>
+            <span>Discover</span>
+        </a>
+
+        <a href="add-recipe.html" class="nav-item">
+            <i class="fa-regular fa-square-plus" aria-hidden="true"></i>
+            <span>Add Recipe</span>
+        </a>
+
+        <a href="recipe-book.html" class="nav-item active" aria-current="page">
+            <i class="fa-solid fa-book" aria-hidden="true"></i>
+            <span>Recipe Book</span>
+        </a>
+
+    </nav>
+
+    <script src="recipes.js"></script>
+    <script src="recipe-book.js"></script>
 
 </body>
 </html>
