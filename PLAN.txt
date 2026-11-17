@@ -1,11 +1,12 @@
-Create navigation bar (Discover, Add Recipe, Recipe Book)
+Create navigation bar (Discover, Add Recipe, Recipe Book) - understand
 
-Create column of Photos - Discover
-Create responsive widgets/columns - Add Recipes
-Create list of saved meals - Recipe Book
+Create column of Photos - Discover (check)
+Create responsive widgets/columns - Add Recipes (check)
+Create list of saved meals - Recipe Book  (check)
 
 Set up of and creation of timers within
 Notification when timer is complete
 How to implement sound qhen task complete
+Fill out "frameworked" work
 
 Voice audio input - stretch goal?
