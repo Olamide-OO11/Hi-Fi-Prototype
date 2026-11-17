@@ -1,3 +1,10 @@
+
+
+/*
+
+
+
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -20,15 +27,36 @@ button {
 }
 
 
+*/
+
+
+
+
+
 /* Main page content */
+
+
+
+/*
+
+
+
 
 .page-content {
     padding: 20px;
     padding-bottom: 100px;
 }
 
+/*
+
+
+
 
 /* Bottom Navigation Bar */
+
+
+
+/*
 
 .bottom-nav {
     position: fixed;
@@ -48,6 +76,17 @@ button {
 
 /* Navigation links */
 
+
+
+*/
+
+
+
+/*
+
+
+
+
 .nav-item {
     text-decoration: none;
     color: #777;
@@ -61,42 +100,423 @@ button {
 
 /* Selected navigation page */
 
+*/
+
+
+
+
+/*
+
 .nav-item.active {
     color: #0366d6;
     font-weight: bold;
 }
 
 
+*/
+
 /* Mobile screen adjustments */
 
+
+/* =====================================================
+   PrepMate | style.css
+   Sections: 1 Variables · 2 Base · 3 Headings & buttons
+   4 Bottom nav · 5 Tabs · 6 Discover · 7 Add Recipe
+   8 Recipe Book · 9 Media queries
+   ===================================================== */
+
+
+/* ---------- 1. Variables ----------
+   Colours live in one place, so changing the look later means
+   editing one line. Use them anywhere with var(--name). */
+:root {
+    --bg: #f1f1ee;
+    --header: #dddcd8;
+    --card: #f6f6f3;
+    --line: #c8c7c2;
+    --text: #333;
+    --muted: #777;
+    --accent: #0366d6;      /* your original blue */
+    --good: #28a745;        /* your original green */
+    --danger: #c0392b;
+    --radius: 14px;
+}
+
+
+/* ---------- 2. Base ---------- */
+
+/* border-box means padding is included in an element's width,
+   which stops layouts spilling off the edge of a phone screen */
+* {
+    box-sizing: border-box;
+}
+
+/* The [hidden] attribute is how our JavaScript hides things.
+   !important makes sure no other display rule overrides it. */
+[hidden] {
+    display: none !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;                      /* was margin-top: 50px; the title band now sits at the top */
+    background-color: var(--bg);    /* was #f4f4f9 */
+    color: var(--text);
+}
+
+/* Main page content: bottom padding stops the last item hiding behind the nav */
+.page-content {
+    padding-bottom: 110px;
+}
+
+.page-body {
+    padding: 16px;
+}
+
+
+/* ---------- 3. Headings and buttons ---------- */
+
+h1 {
+    margin: 0;
+    padding: 28px 16px 14px;
+    background-color: var(--header);
+    font-size: 28px;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Your original button style, kept as the main action button */
+button,
+.btn-primary {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    margin-top: 16px;
+}
+
+/* Feedback line under buttons (same idea as your first click test) */
+.message {
+    margin: 12px 0 0;
+    min-height: 1.2em;
+    font-weight: bold;
+}
+
+.message.success { color: var(--good); }
+.message.error   { color: var(--danger); }
+
+
+/* ---------- 4. Bottom navigation ---------- */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    padding: 8px 6px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));   /* room for the iPhone home bar */
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;     /* icon on top, label underneath */
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    text-decoration: none;
+    color: #777;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 0;
+    border-radius: 12px;
+}
+
+.nav-item i {
+    font-size: 20px;            /* Font Awesome icons are text, so font-size sizes them */
+}
+
+/* Selected page. aria-current is also what screen readers announce */
+.nav-item.active,
+.nav-item[aria-current="page"] {
+    color: var(--accent);
+    font-weight: bold;
+    background-color: #eef3fb;
+}
+
+.nav-item:focus-visible {
+    outline: 2px solid var(--accent);
+}
+
+
+/* ---------- 5. Tabs (Add Recipe: Details/Steps, Recipe Book: All/Recents/Favourites) ---------- */
+
+.tabs {
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid var(--line);
+    padding: 0 6px;
+}
+
+.tab {
+    flex: 1;
+    margin: 6px 4px;
+    padding: 10px 8px;
+    background: none;
+    color: var(--text);
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.tab[aria-pressed="true"] {
+    background-color: #d8d8d4;
+    font-weight: bold;
+}
+
+
+/* ---------- 6. Discover ---------- */
+
+.recipe-card {
+    margin-bottom: 18px;
+}
+
+/* Grey box shows if an image is missing, so the layout never collapses */
+.image-box {
+    background-color: #cfcfca;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* crops the photo to fill the box without stretching */
+    display: block;
+}
+
+.img-missing {
+    visibility: hidden;     /* added by JavaScript if an image fails to load */
+}
+
+.recipe-card__meta {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 4px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* ---------- 7. Add Recipe ---------- */
+
+label {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background-color: white;
+    font: inherit;
+    font-size: 15px;
+    color: var(--text);
+}
+
+textarea {
+    min-height: 70px;
+    resize: vertical;
+}
+
+.timer-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.timer-row input {
+    width: 62px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.step-card {
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 14px;
+    margin-bottom: 16px;
+}
+
+.step-heading {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.add-step-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: #d6d6d2;
+    color: var(--text);
+    font-size: 18px;
+    border-radius: var(--radius);
+}
+
+
+/* ---------- 8. Recipe Book ---------- */
+
+.book-card {
+    display: flex;
+    gap: 12px;
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px;
+    margin-bottom: 14px;
+}
+
+.book-card__img {
+    flex: 0 0 100px;
+    height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #cfcfca;
+}
+
+.book-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.book-card__main {
+    flex: 1;
+    min-width: 0;           /* lets long titles wrap instead of pushing the card wider */
+}
+
+.book-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.heart-btn {
+    padding: 4px 6px;
+    background: none;
+    color: var(--text);
+    font-size: 18px;
+}
+
+.heart-btn[aria-pressed="true"] {
+    color: var(--danger);
+}
+
+.book-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 2px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    color: var(--text);
+    font: inherit;
+    font-size: 14px;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.book-actions > :last-child {
+    border-bottom: none;
+}
+
+.recipe-details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.recipe-details ol {
+    margin: 6px 0 0;
+    padding-left: 20px;
+}
+
+.empty-message {
+    color: var(--muted);
+    text-align: center;
+    padding: 24px 0;
+}
+
+
+/* ---------- 9. Media queries ---------- */
+
+/* Phones: slightly tighter spacing (your original block, kept) */
 @media screen and (max-width: 600px) {
-
-    body {
-        margin-top: 20px;
-        font-size: 14px;
-    }
-
-    .page-content {
-        padding: 15px;
-        padding-bottom: 100px;
-    }
-
-    .bottom-nav {
-        padding: 12px 0;
-        padding-bottom: calc(12px + env(safe-area-inset-bottom));
-    }
-
-    .nav-item {
-        font-size: 13px;
-    }
 
     h1 {
         font-size: 24px;
     }
 
-    button {
-        width: auto;
-        max-width: 100%;
+    .page-body {
+        padding: 14px;
     }
 
+    .nav-item {
+        font-size: 11px;
+    }
+}
+
+/* Laptops: keep the phone-shaped layout, centred, so it still looks like a mobile app */
+@media screen and (min-width: 601px) {
+
+    html {
+        background-color: #e4e4ec;
+    }
+
+    body {
+        max-width: 480px;
+        margin: 0 auto;
+        min-height: 100vh;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* A fixed element ignores the body's width, so we match it and centre it by hand */
+    .bottom-nav {
+        width: 480px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 }
