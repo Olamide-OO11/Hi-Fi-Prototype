@@ -1,3 +1,5 @@
+<!--
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +22,17 @@
 
     </main>
 
+->
+
+
+
+
     <!-- Bottom Navigation -->
+
+
+
+<!--
+
     <nav class="bottom-nav">
 
         <a href="index.html" class="nav-item">
@@ -38,6 +50,89 @@
     </nav>
 
     <script src="script.js"></script>
+
+</body>
+</html>
+-->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Add Recipe - PrepMate</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page-content">
+
+        <h1>Add a Recipe</h1>
+
+        <!-- Tabs: aria-pressed marks the selected one -->
+        <div class="tabs">
+            <button type="button" class="tab" data-tab="details" aria-pressed="true">Details</button>
+            <button type="button" class="tab" data-tab="steps" aria-pressed="false">Steps</button>
+        </div>
+
+        <div class="page-body">
+
+            <!-- Tab 1: recipe details -->
+            <section id="panel-details">
+                <label>Recipe Name
+                    <input type="text" id="recipe-name" placeholder="Recipe name">
+                </label>
+                <label>Recipe Description
+                    <input type="text" id="recipe-description" placeholder="Enter description">
+                </label>
+                <label>Serving Size
+                    <input type="text" id="recipe-servings" placeholder="Enter serving size">
+                </label>
+            </section>
+
+            <!-- Tab 2: steps (add-recipe.js adds the step cards) -->
+            <section id="panel-steps" hidden>
+                <div id="steps-list"></div>
+                <button type="button" id="add-step-btn" class="add-step-btn">+ Add Step</button>
+            </section>
+
+            <button type="button" id="save-recipe" class="btn-primary">Save Recipe</button>
+
+            <!-- aria-live makes screen readers announce the message when it changes -->
+            <p id="save-message" class="message" aria-live="polite"></p>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" aria-label="Main navigation">
+
+        <a href="index.html" class="nav-item">
+            <i class="fa-regular fa-compass" aria-hidden="true"></i>
+            <span>Discover</span>
+        </a>
+
+        <a href="add-recipe.html" class="nav-item active" aria-current="page">
+            <i class="fa-regular fa-square-plus" aria-hidden="true"></i>
+            <span>Add Recipe</span>
+        </a>
+
+        <a href="recipe-book.html" class="nav-item">
+            <i class="fa-solid fa-book" aria-hidden="true"></i>
+            <span>Recipe Book</span>
+        </a>
+
+    </nav>
+
+    <script src="recipes.js"></script>
+    <script src="add-recipe.js"></script>
 
 </body>
 </html>
