@@ -1,9 +1,9 @@
-/* =====================================================
+/* 
    recipes.js | shared by every page
    Holds the data and the small helper functions that
    more than one page needs. Load it BEFORE a page's own
    script, because that script uses what is defined here.
-   ===================================================== */
+    */
 
 // The name we save recipes under in the browser's localStorage
 const STORAGE_KEY = 'prepmate-recipes';
