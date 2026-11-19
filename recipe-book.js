@@ -1,8 +1,8 @@
-/* =====================================================
+/* 
    recipe-book.js | Recipe Book page
    Pattern: keep the data in a variable, then call
    renderList() to redraw the page whenever it changes.
-   ===================================================== */
+ */
 
 // ---------- SELECT ----------
 const bookList   = document.getElementById('book-list');
