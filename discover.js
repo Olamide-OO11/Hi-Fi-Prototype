@@ -1,37 +1,37 @@
-/* =====================================================
-   discover.js | Discover page
-   Pattern: Select -> Build -> Add to the page
-   ===================================================== */
+/*   jAVASCRIPT FOR  Discover page aka index.html (relating to mid-fi) 
+    Select(1) -> Build(2) -> Add to the page(3): 
+    (1) Finds the empty box document.getElementById('discover-list'). and Reads the data: the recipes are in recipes.js, in the discoverRecipes array and forEach loop goes through them one at a time.
+   (2+3) Builds and inserts a card for each: with the image, name and time, then appendChild puts each one into the box.
+   */
 
-// 1. SELECT the empty container from index.html
+// 1. SELECTs the empty container of index.html file from the div element
 const discoverList = document.getElementById('discover-list');
 
-// 2. BUILD one card per recipe. forEach runs the function once for each item
-//    in the array, and "recipe" is the current item.
+// 2. BUILDs one card per recipe where forEach loop runs the function once for each item in the array with "recipe" as the current item.
+//uses variables below from recipe.js if lost
 discoverRecipes.forEach(function (recipe) {
-
     const card = makeEl('article', 'recipe-card');
 
-    // Grey box with the photo inside
+// Grey box with  photo inside (organised in recipe.js) - helps since there's no image attributed yet
     const imageBox = makeEl('div', 'image-box');
     const image = document.createElement('img');
     image.src = recipe.image;
     image.alt = recipe.title;
 
-    // If the image file is missing, hide the broken-image icon (CSS shows the grey box)
+// error handling - missing image file ; code below hides broken image icon and then the css shows the grey box of the outline it'd be placed in)
     image.addEventListener('error', function () {
         image.classList.add('img-missing');
     });
     imageBox.appendChild(image);
 
-    // Name on the left, time on the right (as in the mid-fi)
-    const meta = makeEl('div', 'recipe-card__meta');
-    meta.appendChild(makeEl('span', '', recipe.title));
-    meta.appendChild(makeEl('span', '', recipe.minutes + ' min'));
+    // Name on the left, time on the right just like the mid-fi does
+    const metadata = makeEl('div', 'recipe-card__meta');
+    metadata.appendChild(makeEl('span', '', recipe.title));
+    metadata.appendChild(makeEl('span', '', recipe.minutes + ' min'));
 
     card.appendChild(imageBox);
     card.appendChild(meta);
 
-    // 3. ADD the finished card to the page
+    // 3. adds the finished card to the page
     discoverList.appendChild(card);
 });
