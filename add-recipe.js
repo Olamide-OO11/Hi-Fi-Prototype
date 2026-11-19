@@ -1,8 +1,7 @@
-/* =====================================================
-   add-recipe.js | Add Recipe page
-   Three jobs: 1) switch tabs  2) add step cards
-   3) save the recipe
-   ===================================================== */
+/* 
+   add-recipe.js -  Add Recipe page
+   Three jobs: 1) switch tabs  2) add step cards 3) save the recipe
+    */
 
 // ---------- SELECT everything we need once, at the top ----------
 const tabButtons   = document.querySelectorAll('.tab');
@@ -26,7 +25,7 @@ function showTab(name) {
     });
 }
 
-// LISTEN: each tab button calls showTab with the name from its data-tab attribute
+// LISTEN: each tab button calls showTab with the name from its data-tab attribute 
 tabButtons.forEach(function (button) {
     button.addEventListener('click', function () {
         showTab(button.dataset.tab);
@@ -72,7 +71,7 @@ addStepBtn.addEventListener('click', addStepCard);
 addStepCard();
 
 
-/* ---------- 3. Saving ---------- */
+/* ------ 3. Saving ----- */
 
 // Reads a number from an input inside a card; falls back to 0 if it is empty
 function readNumber(card, selector) {
