@@ -1,5 +1,5 @@
 /* 
-   recipes.js | shared by every page
+   recipes.js - shared by every page
    Holds the data and the small helper functions that
    more than one page needs. Load it BEFORE a page's own
    script, because that script uses what is defined here.
@@ -52,7 +52,7 @@ const starterRecipes = [
 ];
 
 
-/* ---------- Saving and loading ---------- */
+/* ------ Saving and loading ---- */
 
 // localStorage can only store text, so we convert the array to text (JSON.stringify)
 // when saving and back to an array (JSON.parse) when loading.
