@@ -10,9 +10,8 @@
    ===================================================== */
 
 
-/* ---------- 1. Variables ----------
-   Colours live in one place, so changing the look later means
-   editing one line. Use them anywhere with var(--name). */
+/* 1. Variables assignment (colour)
+   Home for custom colour assignment- use them anywhere with var(--name). */
 :root {
     --bg: #f1f1ee;
     --header: #dddcd8;
@@ -20,22 +19,21 @@
     --line: #c8c7c2;
     --text: #333;
     --muted: #777;
-    --accent: #0366d6;      /* your original blue */
-    --good: #28a745;        /* your original green */
+    --accent: #0366d6;      /*  my og blue */
+    --good: #28a745;        /* my og green */
     --danger: #c0392b;
     --radius: 14px;
 }
 
 
-/* ---------- 2. Base ---------- */
+/*  2.General Base  */
 
-/* border-box means padding is included in an element's width,
-   which stops layouts spilling off the edge of a phone screen */
+/* stops layouts spilling off the edge of a phone screen since this option includes padding in the element's width*/
 * {
     box-sizing: border-box;
 }
 
-/* The [hidden] attribute is how our JavaScript hides things.
+/* [hidden] attribute is how  JavaScript hides things.
    !important makes sure no other display rule overrides it. */
 [hidden] {
     display: none !important;
@@ -43,22 +41,23 @@
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;                      /* was margin-top: 50px; the title band now sits at the top */
+    margin: 0;                      /*  margin-top: 50px - used to be that but now the title band now sits at the top */
     background-color: var(--bg);    /* was #f4f4f9 */
     color: var(--text);
 }
 
-/* Main page content: bottom padding stops the last item hiding behind the nav */
+/* Main page content - bottom padding stops the last item hiding behind the nav */
 .page-content {
     padding-bottom: 110px;
 }
 
+/*general padding for column of disocver items*/
 .page-body {
     padding: 16px;
 }
 
 
-/* ---------- 3. Headings and buttons ---------- */
+/* 3. Headings and buttons  */
 
 h1 {
     margin: 0;
@@ -98,9 +97,9 @@ button,
 .message.error   { color: var(--danger); }
 
 
-/* ---------- 4. Bottom navigation ---------- */
+/*4. Bottom navigation */
 
-.bottom-nav {
+.bottom {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -111,11 +110,11 @@ button,
     background-color: white;
     border-top: 1px solid #ddd;
     padding: 8px 6px;
-    padding-bottom: calc(8px + env(safe-area-inset-bottom));   /* room for the iPhone home bar */
-    z-index: 1000;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));   /* room for the iPhone home bar; tells website how much additional space to leave to avoid placing content too close to the device's bottom interface. */
+    z-index: 1000; /*helps with higher stacking priority so no other content covers */
 }
 
-.nav-item {
+.navibar{
     display: flex;
     flex-direction: column;     /* icon on top, label underneath */
     align-items: center;
@@ -129,19 +128,20 @@ button,
     border-radius: 12px;
 }
 
-.nav-item i {
-    font-size: 20px;            /* Font Awesome icons are text, so font-size sizes them */
+.navibar i,
+.navibar svg {
+    font-size: 20px;            
 }
 
 /* Selected page. aria-current is also what screen readers announce */
-.nav-item.active,
-.nav-item[aria-current="page"] {
+.navibar.active,
+.navibar[aria-current="page"] {
     color: var(--accent);
     font-weight: bold;
     background-color: #eef3fb;
 }
 
-.nav-item:focus-visible {
+.navibar:focus-visible {
     outline: 2px solid var(--accent);
 }
 
@@ -367,7 +367,7 @@ textarea {
 
 /* ---------- 9. Media queries ---------- */
 
-/* Phones: slightly tighter spacing (your original block, kept) */
+/* Phones persepctive slightly tighter spacing (your original block, kept) */
 @media screen and (max-width: 600px) {
 
     h1 {
@@ -378,7 +378,7 @@ textarea {
         padding: 14px;
     }
 
-    .nav-item {
+    .navibar {
         font-size: 11px;
     }
 }
@@ -398,7 +398,7 @@ textarea {
     }
 
     /* A fixed element ignores the body's width, so we match it and centre it by hand */
-    .bottom-nav {
+    .bottom {
         width: 480px;
         left: 50%;
         transform: translateX(-50%);
