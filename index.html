@@ -1,55 +1,4 @@
 
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <main class="page-content">
-
-        <h1>Hello from GitHub</h1>
-
-        <button id="myBtn">Click Me</button>
-
-    </main>
-
-    -->
-
-    <!-- Bottom Navigation -->
-
-    <!--
-    <nav class="bottom-nav">
-
-        <a href="index.html" class="nav-item active">
-            <span>Discover</span>
-        </a>
-
-        <a href="add-recipe.html" class="nav-item">
-            <span>Add Recipe</span>
-        </a>
-
-        <a href="recipe-book.html" class="nav-item">
-            <span>Recipe Book</span>
-        </a>
-
-    </nav>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
-
-
--->
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,9 +7,9 @@
     <!-- viewport-fit=cover lets the nav use the safe area on notched phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Discover - PrepMate</title>
-    <!-- Font Awesome from a CDN: no account or kit needed -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/9c48262338.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
@@ -75,26 +24,26 @@
     </main>
 
     <!-- Bottom Navigation -->
-    <nav class="bottom-nav" aria-label="Main navigation">
-
-        <a href="index.html" class="nav-item active" aria-current="page">
+    <nav class="bottom" aria-label="Main navigation">
+        
+        <a href="index.html" class="navibar active" aria-current="page">
             <i class="fa-regular fa-compass" aria-hidden="true"></i>
             <span>Discover</span>
         </a>
 
-        <a href="add-recipe.html" class="nav-item">
+        <a href="add-recipe.html" class="navibar">
             <i class="fa-regular fa-square-plus" aria-hidden="true"></i>
             <span>Add Recipe</span>
         </a>
 
-        <a href="recipe-book.html" class="nav-item">
+        <a href="recipe-book.html" class="navibar">
             <i class="fa-solid fa-book" aria-hidden="true"></i>
             <span>Recipe Book</span>
         </a>
 
     </nav>
 
-    <!-- Order matters: shared code first, then this page's code -->
+    <!-- Order matters shared code first then this page's code -Recipe.js covers for all pages so it's run first-->
     <script src="recipes.js"></script>
     <script src="discover.js"></script>
 
