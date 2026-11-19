@@ -30,7 +30,7 @@ discoverRecipes.forEach(function (recipe) {
     metadata.appendChild(makeEl('span', '', recipe.minutes + ' min'));
 
     card.appendChild(imageBox);
-    card.appendChild(meta);
+    card.appendChild(metadata);
 
     // 3. adds the finished card to the page
     discoverList.appendChild(card);
