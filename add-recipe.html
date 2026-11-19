@@ -1,62 +1,3 @@
-<!--
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Recipe - PrepMate</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <main class="page-content">
-
-        <h1>Add Recipe</h1>
-
-        <p>This is where you will be able to add your own recipes.</p>
-
-        <button id="myBtn">Test Add Recipe</button>
-
-    </main>
-
-->
-
-
-
-
-    <!-- Bottom Navigation -->
-
-
-
-<!--
-
-    <nav class="bottom-nav">
-
-        <a href="index.html" class="nav-item">
-            <span>Discover</span>
-        </a>
-
-        <a href="add-recipe.html" class="nav-item active">
-            <span>Add Recipe</span>
-        </a>
-
-        <a href="recipe-book.html" class="nav-item">
-            <span>Recipe Book</span>
-        </a>
-
-    </nav>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
--->
-
-
-
 
 
 <!DOCTYPE html>
@@ -65,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Add Recipe - PrepMate</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/9c48262338.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -75,7 +16,7 @@
 
         <h1>Add a Recipe</h1>
 
-        <!-- Tabs: aria-pressed marks the selected one -->
+        <!-- Tabs (aria-pressed marks the selected one) -->
         <div class="tabs">
             <button type="button" class="tab" data-tab="details" aria-pressed="true">Details</button>
             <button type="button" class="tab" data-tab="steps" aria-pressed="false">Steps</button>
@@ -104,7 +45,7 @@
 
             <button type="button" id="save-recipe" class="btn-primary">Save Recipe</button>
 
-            <!-- aria-live makes screen readers announce the message when it changes -->
+            <!-- aria-live makes screen readers announce the message when it changes:helpful for blind users-->
             <p id="save-message" class="message" aria-live="polite"></p>
 
         </div>
@@ -112,19 +53,19 @@
     </main>
 
     <!-- Bottom Navigation -->
-    <nav class="bottom-nav" aria-label="Main navigation">
+    <nav class="bottom" aria-label="Main navigation">
 
-        <a href="index.html" class="nav-item">
+        <a href="index.html" class="navibar">
             <i class="fa-regular fa-compass" aria-hidden="true"></i>
             <span>Discover</span>
         </a>
 
-        <a href="add-recipe.html" class="nav-item active" aria-current="page">
+        <a href="add-recipe.html" class="navibar active" aria-current="page">
             <i class="fa-regular fa-square-plus" aria-hidden="true"></i>
             <span>Add Recipe</span>
         </a>
 
-        <a href="recipe-book.html" class="nav-item">
+        <a href="recipe-book.html" class="navibar">
             <i class="fa-solid fa-book" aria-hidden="true"></i>
             <span>Recipe Book</span>
         </a>
