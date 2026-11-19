@@ -1,3 +1,5 @@
+console.log('discover.js loaded');
+
 /*   jAVASCRIPT FOR  Discover page aka index.html (relating to mid-fi) 
     Select(1) -> Build(2) -> Add to the page(3): 
     (1) Finds the empty box document.getElementById('discover-list'). and Reads the data: the recipes are in recipes.js, in the discoverRecipes array and forEach loop goes through them one at a time.
