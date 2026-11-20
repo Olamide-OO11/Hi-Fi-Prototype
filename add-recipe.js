@@ -37,6 +37,10 @@ tabButtons.forEach(function (button) {
 
 // Builds one blank step card and adds it to the Steps panel.
 // The text here is fixed (no user input), so innerHTML with a template is safe.
+/*
+
+
+
 function addStepCard() {
     const number = stepsList.children.length + 1;   // how many cards exist, plus one
     const card = makeEl('div', 'step-card');
