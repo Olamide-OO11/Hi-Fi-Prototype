@@ -3,6 +3,9 @@
    Shows how a page receives data from a link:
    recipe-book.js sends cooking.html?id=burger and we read the "id" back.
  */
+/*
+
+
 
 const params   = new URLSearchParams(window.location.search);   // everything after the ?
 const recipeId = params.get('id');                               // e.g. 'burger'
