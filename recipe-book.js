@@ -50,6 +50,13 @@ function buildCard(recipe) {
     }
 
     // Right: title + heart, three actions, hidden details
+
+
+
+   /*workign still on here
+
+
+       
     const main = makeEl('div', 'book-card__main');
     const head = makeEl('div', 'book-card__head');
     head.appendChild(makeEl('span', '', recipe.title));
