@@ -16,8 +16,6 @@ let currentFilter = 'all';       // 'all', 'recents' or 'favourites'
 /* ---------- Which recipes should show? ---------- */
 
 
-
-/*
 function getVisibleRecipes() {
     if (currentFilter === 'favourites') {
         return recipes.filter(function (recipe) { return recipe.favourite; });
@@ -30,9 +28,7 @@ function getVisibleRecipes() {
     return recipes;
 }
 
-here
 
-*/
 
 // Text shown when a tab has nothing in it
 function emptyText() {
@@ -59,12 +55,7 @@ function buildCard(recipe) {
 
     // Right: title + heart, three actions, hidden details
 
-
-
-   /*workign still on here
-
-
-       
+      
     const main = makeEl('div', 'book-card__main');
     const head = makeEl('div', 'book-card__head');
     head.appendChild(makeEl('span', '', recipe.title));
@@ -121,13 +112,6 @@ function buildCard(recipe) {
     edit.appendChild(makeIcon('fa-regular fa-pen-to-square'));
 
 
-
-
-   /*
-
-
-
-   
     const actions = makeEl('div', 'book-actions');
     actions.appendChild(start);
     actions.appendChild(view);
@@ -164,10 +148,6 @@ function renderList() {
 
 
 /* ---------- Tabs: All,recents, favourites ---------- */
-
-   /*
-
-
 
    
 filterTabs.forEach(function (tab) {
