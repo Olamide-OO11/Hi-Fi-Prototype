@@ -126,6 +126,15 @@ saveBtn.addEventListener('click', function () {
 
     const steps = collectSteps();
 
+
+
+
+   /*herr
+
+
+
+
+   
     // Total time = every step's timer added together, rounded up to whole minutes
     let totalSeconds = 0;
     steps.forEach(function (step) {
