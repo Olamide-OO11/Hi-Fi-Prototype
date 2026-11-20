@@ -37,8 +37,6 @@ tabButtons.forEach(function (button) {
 
 // Builds one blank step card and adds it to the Steps panel.
 // The text here is fixed (no user input), so innerHTML with a template is safe.
-/*
-
 
 
 function addStepCard() {
@@ -125,13 +123,6 @@ saveBtn.addEventListener('click', function () {
     }
 
     const steps = collectSteps();
-
-
-
-
-   /*herr
-
-
 
 
    
