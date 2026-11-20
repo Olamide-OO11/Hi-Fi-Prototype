@@ -47,7 +47,7 @@ function buildCard(recipe) {
 
     const card = makeEl('article', 'book-card');
 
-    // Left: photo box
+    // Left photo box
     const imageBox = makeEl('div', 'book-card__img');
     if (recipe.image) {
         const image = document.createElement('img');
@@ -160,7 +160,16 @@ function renderList() {
 }
 
 
-/* ---------- Tabs: All / Recents / Favourites ---------- */
+   
+
+
+/* ---------- Tabs: All,recents, favourites ---------- */
+
+   /*
+
+
+
+   
 filterTabs.forEach(function (tab) {
     tab.addEventListener('click', function () {
         currentFilter = tab.dataset.filter;              // read data-filter from the HTML
