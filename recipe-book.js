@@ -105,6 +105,14 @@ function buildCard(recipe) {
     edit.appendChild(makeEl('span', '', 'Edit Recipe'));
     edit.appendChild(makeIcon('fa-regular fa-pen-to-square'));
 
+
+
+
+   /*
+
+
+
+   
     const actions = makeEl('div', 'book-actions');
     actions.appendChild(start);
     actions.appendChild(view);
