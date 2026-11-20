@@ -14,6 +14,10 @@ let currentFilter = 'all';       // 'all', 'recents' or 'favourites'
 
 
 /* ---------- Which recipes should show? ---------- */
+
+
+
+/*
 function getVisibleRecipes() {
     if (currentFilter === 'favourites') {
         return recipes.filter(function (recipe) { return recipe.favourite; });
@@ -25,6 +29,10 @@ function getVisibleRecipes() {
     }
     return recipes;
 }
+
+here
+
+*/
 
 // Text shown when a tab has nothing in it
 function emptyText() {
