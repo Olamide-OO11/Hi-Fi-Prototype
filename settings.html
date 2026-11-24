@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Settings - PrepMate</title>
+    <script src="https://kit.fontawesome.com/9c48262338.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page-content">
+
+        <h1 class="title-with-icon">Settings <i class="fa-solid fa-gear" aria-hidden="true"></i></h1>
+
+        <div class="page-body">
+
+            <!-- Alert preferences: radio buttons, so only one can be picked -->
+            <fieldset class="settings-group">
+                <legend>Alert Preferences</legend>
+                <p>Choose how PrepMate notifies you</p>
+
+                <label class="setting-option"><span>Quiet</span>
+                    <input type="radio" name="alert" value="quiet">
+                </label>
+                <label class="setting-option"><span>Medium</span>
+                    <input type="radio" name="alert" value="medium">
+                </label>
+                <label class="setting-option"><span>Loud</span>
+                    <input type="radio" name="alert" value="loud">
+                </label>
+
+                <p id="alert-help" class="setting-help"></p>
+                <button type="button" id="test-alert">Test alert</button>
+            </fieldset>
+
+            <!-- Voice commands: a checkbox, because it is simply on or off -->
+            <fieldset class="settings-group">
+                <legend>Voice Commands</legend>
+                <p>Use your device's microphone for hands free interaction</p>
+
+                <label class="setting-option"><span>Use Voice Commands</span>
+                    <input type="checkbox" id="voice-toggle">
+                </label>
+
+                <p id="voice-help" class="setting-help"></p>
+            </fieldset>
+
+            <p id="settings-message" class="message" aria-live="polite"></p>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation (no page is "active" here) -->
+    <nav class="bottom" aria-label="Main navigation">
+
+        <a href="index.html" class="navibar">
+            <i class="fa-regular fa-compass" aria-hidden="true"></i>
+            <span>Discover</span>
+        </a>
+
+        <a href="add-recipe.html" class="navibar">
+            <i class="fa-regular fa-square-plus" aria-hidden="true"></i>
+            <span>Add Recipe</span>
+        </a>
+
+        <a href="recipe-book.html" class="navibar">
+            <i class="fa-solid fa-book" aria-hidden="true"></i>
+            <span>Recipe Book</span>
+        </a>
+
+    </nav>
+
+    <script src="recipes.js"></script>
+    <script src="settings.js"></script>
+
+</body>
+</html>
