@@ -1,3 +1,7 @@
+
+<!--
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,15 @@
 
 <body>
 
+
+-->
+
     <!-- This a palceholer right now where the real cooking screen (steps, timers, progress bar etc) goes here  -->
+
+<!--
+
+
+
     <main class="page-content">
 
         <h1 id="cooking-title">Cooking</h1>
@@ -21,8 +33,14 @@
         </div>
 
     </main>
+
+-->
     
     <!-- Bottom Navigation -->
+
+<!--
+
+
     <nav class="bottom" aria-label="Main navigation">
 
         <a href="index.html" class="navibar">
@@ -42,6 +60,64 @@
 
     </nav>
 
+    <script src="recipes.js"></script>
+    <script src="cooking.js"></script>
+
+</body>
+</html>
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Cooking - PrepMate</title>
+    <script src="https://kit.fontawesome.com/9c48262338.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Timer-done banner. aria-live="assertive" makes screen readers announce it straight away.
+         It is a <button> so it can be tapped (or reached with the keyboard) to dismiss it. -->
+    <div id="alert-region" aria-live="assertive">
+        <button type="button" id="alert-banner" class="alert-banner" hidden></button>
+    </div>
+
+    <main class="cooking-page">
+
+        <!-- Top bar from the mid-fi: back arrow, recipe name, settings cog.
+             There is no bottom nav on this screen so nothing competes with the cooking. -->
+        <header class="cook-header">
+            <a href="recipe-book.html" class="icon-link" aria-label="Back to Recipe Book">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            </a>
+            <h1 id="cook-title">Cooking</h1>
+            <a href="settings.html" class="icon-link" aria-label="Settings">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            </a>
+        </header>
+
+        <!-- cooking.js fills this in: either the step-by-step view or the multi-timer view -->
+        <div id="cook-body"></div>
+
+    </main>
+
+    <!-- Meal Complete screen: hidden until the meal finishes -->
+    <section id="complete-screen" class="complete-screen" hidden aria-labelledby="complete-title">
+        <h2 id="complete-title">Meal Complete!</h2>
+        <p>Enjoy your meal!</p>
+
+        <div class="complete-actions">
+            <a href="recipe-book.html" class="big-btn" id="return-link">Return to Recipe Book</a>
+            <button type="button" class="big-btn" id="replay-btn">Replay Recipe</button>
+        </div>
+    </section>
+
+    <!-- Order matters: shared code first, then this page's code -->
     <script src="recipes.js"></script>
     <script src="cooking.js"></script>
 
