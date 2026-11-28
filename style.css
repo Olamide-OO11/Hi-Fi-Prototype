@@ -1,5 +1,7 @@
 
-/* Mobile screen adjustments */
+/* Mobile screen adjustments
+   COOKING SCREENS - 10. IS EXTREME
+*/
 
 
 /* =====================================================
@@ -403,4 +405,403 @@ textarea {
         left: 50%;
         transform: translateX(-50%);
     }
+}
+
+
+
+
+/* =====================================================
+   10. Cooking screens (cooking.html)
+   ===================================================== */
+
+:root {
+    --done-bg: #b5e06b;             /* light green for finished timers, banners and Meal Complete */
+}
+
+/* Top bar: back arrow, recipe name, settings cog */
+.cook-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--header);
+    padding: 22px 12px 12px;
+}
+
+/* the global h1 style has a background band; here we switch it off */
+.cook-header h1 {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    background: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+.icon-link {
+    color: var(--text);
+    font-size: 22px;
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.icon-link:focus-visible,
+.icon-btn:focus-visible,
+.round-btn:focus-visible,
+.alert-banner:focus-visible,
+.big-btn:focus-visible {
+    outline: 3px solid var(--accent);
+}
+
+/* Progress: one segment per step */
+.progress {
+    display: flex;
+    gap: 6px;
+    padding: 10px 16px 12px;
+    background-color: var(--header);
+}
+
+.progress-seg {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #c4c3be;
+}
+
+.progress-seg.is-done {
+    background-color: #222;
+}
+
+/* The step text */
+.step-text {
+    padding: 16px;
+    text-align: left;
+}
+
+.step-text h2 {
+    margin: 0 0 10px;
+    font-size: 19px;
+}
+
+.step-text p {
+    margin: 0 0 8px;
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+.step-notes {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 14px !important;
+}
+
+/* Previous / Step n of N / Next */
+.step-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 28px 0 8px;
+    font-size: 18px;
+}
+
+.round-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #d8d8d4;
+    color: var(--text);
+    font-size: 16px;
+}
+
+.round-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.voice-hint {
+    margin: 4px 0 0;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* Timers area */
+.timers-section {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--line);
+}
+
+.timers-section h2,
+.tasks-heading {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: normal;
+    text-align: center;
+}
+
+.cook-note {
+    padding: 12px 0;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* One timer card */
+.timer-card {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background-color: #e3e3df;
+    border-radius: var(--radius);
+}
+
+.timer-card--done {
+    background-color: var(--done-bg);
+}
+
+.timer-row-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.timer-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    text-align: left;
+}
+
+.timer-name {
+    font-size: 14px;
+}
+
+.timer-time {
+    font-size: 32px;
+    font-variant-numeric: tabular-nums;     /* digits are equal width so the numbers don't jiggle */
+}
+
+.timer-controls {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.icon-btn {
+    padding: 10px;
+    background: none;
+    color: var(--text);
+    font-size: 22px;
+    border-radius: 10px;
+}
+
+.icon-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.adjust {
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    background-color: #d3d3cf;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.adjust .icon-btn {
+    padding: 8px 10px;
+    font-size: 16px;
+}
+
+.timer-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+/* Multi-timer view */
+.active-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 16px 16px 0;
+}
+
+.active-head h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.master-clock {
+    font-size: 20px;
+    font-variant-numeric: tabular-nums;
+}
+
+.tasks {
+    padding: 0 16px 8px;
+}
+
+.tasks-heading {
+    margin-top: 18px;
+}
+
+/* Timer-done banner at the top of the screen */
+#alert-region {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);       /* centres a fixed element, as with the nav */
+    width: calc(100% - 20px);
+    max-width: 460px;
+    z-index: 2000;
+}
+
+.alert-banner {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--done-bg);
+    color: var(--text);
+    border-radius: var(--radius);
+    font-size: 17px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.alert-banner small {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* Meal Complete: a full green screen, kept the width of the phone layout */
+.complete-screen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: var(--done-bg);
+    text-align: center;
+    z-index: 3000;
+}
+
+.complete-screen h2 {
+    margin: 0 0 10px;
+    font-size: 34px;
+    font-weight: normal;
+}
+
+.complete-screen p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.complete-actions {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: calc(24px + env(safe-area-inset-bottom));
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.big-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background-color: #f1f1f5;
+    color: var(--text);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 17px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   11. Settings page and the Cooking Style dropdown
+   ===================================================== */
+
+.title-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* fieldset groups related controls; we remove its default border */
+.settings-group {
+    margin: 0 0 22px;
+    padding: 0;
+    border: none;
+    text-align: center;
+}
+
+.settings-group legend {
+    width: 100%;
+    margin: 8px 0 4px;
+    padding: 0;
+    font-size: 19px;
+}
+
+.settings-group p {
+    margin: 0 0 12px;
+    font-size: 14px;
+}
+
+.setting-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 18px 16px;
+    background-color: #e3e3df;
+    border-radius: var(--radius);
+    font-size: 17px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.setting-option input {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+}
+
+.setting-help {
+    margin: 4px 0 10px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+select {
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background-color: white;
+    font: inherit;
+    font-size: 15px;
+    color: var(--text);
 }
