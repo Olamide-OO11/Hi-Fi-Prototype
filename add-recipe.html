@@ -35,6 +35,16 @@
                 <label>Serving Size
                     <input type="text" id="recipe-servings" placeholder="Enter serving size">
                 </label>
+
+                <!--this is how the cooking screen wil behave on what's chosen-->
+                <label>Cooking Style
+                    <select id="recipe-mode">
+                        <option value="steps">Step-by-step (guided)</option>
+                        <option value="timers">Multiple timers (seasoned cooks)</option>
+                    </select>
+                </label>
+                
+<p id="mode-help" class="setting-help"></p>
             </section>
 
             <!-- Tab 2: steps (add-recipe.js adds the step cards) -->
