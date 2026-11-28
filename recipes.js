@@ -5,6 +5,7 @@
    script, because that script uses what is defined here.
 
    //CODE LINE 36 - AWARE
+   //ALSO CODE 133 ONWARDS
     */
 
 // The name we save recipes under in the browser's localStorage
@@ -127,6 +128,7 @@ function formatTimer(timer) {
 }
 
 
+/* explain this - has to do with audio (KINDA CONFUSED ON THIS ONE FS */
 /* ---------- Settings (Alert Preferences + Voice Commands) ---------- */
 
 // Used by the Settings page and the Cooking page. Saved in localStorage like recipes.
