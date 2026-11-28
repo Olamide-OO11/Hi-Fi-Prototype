@@ -11,6 +11,8 @@ const stepsList    = document.getElementById('steps-list');
 const addStepBtn   = document.getElementById('add-step-btn');
 const saveBtn      = document.getElementById('save-recipe');
 const saveMessage  = document.getElementById('save-message');
+const modeSelect   = document.getElementById('recipe-mode');
+const modeHelp     = document.getElementById('mode-help');
 
 
 /* ---------- 1. Tabs ---------- */
@@ -58,19 +60,43 @@ function addStepCard() {
                 <input type="number" class="timer-seconds" min="0" max="59" value="0" aria-label="Timer seconds"> sec
             </div>
         </label>
+      <!--Only shown when the option of cooking style is  "Multiple timers...etc" has been chosen
+      <label class="timers-only" hidden>Starts at (minutes into the meal)
+          <input type="number" class="step-start" min="0" value="0">
+      </label>
+        
         <label>Extra Notes (optional)
             <textarea class="step-notes" placeholder="Enter notes..."></textarea>
         </label>
     `;
 
     stepsList.appendChild(card);
+    updateModeFields();
 }
+
+// Show or hide the "Starts at" boxes depending on the cooking style.
+// class="timers-only" marks the boxes that only the multi-timer style needs.
+function updateModeFields() {
+    const isTimers = (modeSelect.value === 'timers');
+
+    document.querySelectorAll('.timers-only').forEach(function (box) {
+        box.hidden = !isTimers;
+    });
+
+    modeHelp.textContent = isTimers
+        ? 'Shows every timer at once on one screen. Set when each task starts.'
+        : 'Shows one step at a time with a progress bar. Good for beginners.';
+}
+
+// LISTEN: run it whenever the dropdown changes
+modeSelect.addEventListener('change', updateModeFields);
 
 // LISTEN: the big "+ Add Step" button adds another card
 addStepBtn.addEventListener('click', addStepCard);
 
 // Start with one card already on the page
 addStepCard();
+
 
 
 /* ------ 3. Saving ----- */
@@ -93,6 +119,7 @@ function collectSteps() {
                 minutes: readNumber(card, '.timer-minutes'),
                 seconds: readNumber(card, '.timer-seconds')
             },
+            startOffset: readNumber(card, '.step-start'), //USSED FOR THE MULTI-TIMER STYLE
             notes: card.querySelector('.step-notes').value.trim()
         };
     });
@@ -138,6 +165,7 @@ saveBtn.addEventListener('click', function () {
         description: document.getElementById('recipe-description').value.trim(),
         servings: document.getElementById('recipe-servings').value.trim(),
         minutes: Math.ceil(totalSeconds / 60),
+        mode: modeSelect.value,  //STEP OR timers
         image: null,                     // photo upload comes later
         favourite: false,
         lastOpened: null,
